@@ -1,0 +1,21 @@
+{
+  "ModId": "P3R.UEToolkit",
+  "ModName": "UE Toolkit (Persona 3 Reload)",
+  "ModAuthor": "RyoTune",
+  "ModVersion": "1.0.0",
+  "ModDescription": "UE Toolkit extension mod for Persona 3 Reload.",
+  "ModDll": "P3R.UEToolkit.dll",
+  "ModIcon": "Preview.png",
+  "ModR2RManagedDll32": "x86/P3R.UEToolkit.dll",
+  "ModR2RManagedDll64": "x64/P3R.UEToolkit.dll",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "P3R.UEToolkit.ReleaseMetadata.json",
+  "PluginData": {},
+  "IsUniversalMod": false,
+  "ModDependencies": [ "reloaded.sharedlib.hooks", "Reloaded.Memory.SigScan.ReloadedII" ],
+  "OptionalDependencies": [],
+  "SupportedAppId": [],
+  "ProjectUrl": ""
+}
