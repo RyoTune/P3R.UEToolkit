@@ -37,7 +37,7 @@ env:
 
   IS_RELEASE: ${{ startsWith(github.ref, 'refs/tags/') }}
   RELEASE_TAG: ${{ github.ref_name }}
-  PROJECT_DIR: ./SharedScans.Reloaded
+  PROJECT_DIR: .
 
 jobs:
   build:
@@ -57,7 +57,7 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - name: Setup .NET Core SDK (7.0)
+      - name: Setup .NET Core SDK (8.0)
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 8.0.x
@@ -82,9 +82,6 @@ jobs:
 
       - name: Build
         run: ${{ env.PROJECT_DIR }}/Publish.ps1
-
-      - name: Copy Build
-        run: Copy-Item -Force -Path "${{ env.PROJECT_DIR }}/Publish/*" -Destination "./Publish" -Recurse
 
       - name: Upload GitHub Release Artifact
         uses: actions/upload-artifact@v4
