@@ -5,6 +5,7 @@ using Reloaded.Hooks.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 using P3R.UEToolkit.Template;
 using P3R.UEToolkit.Configuration;
+using UE.Toolkit.Interfaces.ObjectWriters;
 
 namespace P3R.UEToolkit;
 
@@ -17,6 +18,7 @@ public class Mod : ModBase
 
     private Config _config;
     private readonly IModConfig _modConfig;
+    private readonly P3RTypeProvider _provider = new();
 
     public Mod(ModContext context)
     {
@@ -29,8 +31,8 @@ public class Mod : ModBase
 #if DEBUG
         Debugger.Launch();
 #endif
-        Project.Initialize(_modConfig, _modLoader, _log, true);
-        Log.LogLevel = _config.LogLevel;
+        _modLoader.GetController<ITypeRegistry>().TryGetTarget(out var reg);
+        reg!.RegisterProvider(_provider);
     }
 
     #region Standard Overrides
