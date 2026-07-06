@@ -2,7 +2,7 @@
   "ModId": "P3R.UEToolkit",
   "ModName": "UE Toolkit (Persona 3 Reload)",
   "ModAuthor": "RyoTune",
-  "ModVersion": "1.0.0",
+  "ModVersion": "1.0.1",
   "ModDescription": "UE Toolkit extension mod for Persona 3 Reload.",
   "ModDll": "P3R.UEToolkit.dll",
   "ModIcon": "Preview.png",
